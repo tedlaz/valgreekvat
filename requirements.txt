@@ -1,0 +1,2 @@
+PyQt5>=5.8.1
+suds-jurko>=0.6
