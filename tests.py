@@ -7,6 +7,3 @@ class Tests_general(unittest.TestCase):
     def test_a2(self):
         assert len('aa') == 2
         
- 
-if __name__ == '__main__':
-    unittest.main()
