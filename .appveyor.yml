@@ -45,14 +45,14 @@ test_script:
 
 after_test:
   - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
-  - IF ["%APPVEYOR_PULL_REQUEST_NUMBER%"]==[""] (pyinstaller.exe qafmgr.py)
+  - IF ["%APPVEYOR_PULL_REQUEST_NUMBER%"]==[""] (pyinstaller.exe -F -w qafmgr.py)
 
 on_success:
-  - codecov
+  - dir
   
 artifacts:
 #  - path: 'releases/*.zip'
-  - path: 'build/qafmgr/*.exe'
+  - path: 'build/*.exe'
 
 on_finish:
 #   - ps: $blockRdp = $false; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
