@@ -55,11 +55,10 @@ artifacts:
   - path: 'dist/*.exe'
   
 deploy:
-  release: myproduct-v$(appveyor_build_version)
-  description: 'Release description'
+  description: 'This is a test description'
   provider: GitHub
   auth_token:
-    secure: ae537cc8a01722807c8d51dd25f3eddc973791e5 
+    secure: 4093c25baa8d19fd52ae69d0291d32aa65d0b89b 
   artifact: dist\qafmgr.exe
   draft: false
   prerelease: false
