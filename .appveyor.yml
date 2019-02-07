@@ -59,7 +59,7 @@ deploy:
   description: 'Release description'
   provider: GitHub
   auth_token:
-    secure: f6278a07a91593f401569d661b2bff1e0f2a54a9
+    secure: 7a615a67f056b4a9c3768cbc825f404d79913def
   artifact: dist\qafmgr.exe
   draft: false
   prerelease: false
