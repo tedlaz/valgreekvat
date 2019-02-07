@@ -19,8 +19,9 @@ install:
   - python -m pip install pyinstaller
 
 build_script:
-  - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
-    pyinstaller.exe -F -w qafmgr.py
+  - cmd: >-
+      set PYTHONPATH=C:\projects\;%PYTHONPATH%
+      pyinstaller.exe -F -w qafmgr.py
     
 artifacts:
   - path: 'dist/*.exe'
