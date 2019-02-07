@@ -41,7 +41,7 @@ install:
 build: false
 
 test_script:
-  - python runtests.py
+  - python -v
 
 after_test:
   - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
