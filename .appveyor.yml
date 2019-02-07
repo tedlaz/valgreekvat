@@ -17,8 +17,9 @@ install:
   - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
   - python -m venv myvenv
   - cmd: myvenv\Scripts\activate.bat
-  - python -m pip install -r requirements.txt
-  - python -m pip install pyinstaller
+  - cmd: pip install -r requirements.txt
+  - cmd: pip install pyinstaller
+  - cmd: pip freeze 
 
 build_script:
   - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
