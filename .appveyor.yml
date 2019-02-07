@@ -51,8 +51,8 @@ on_success:
   - codecov
   
 artifacts:
-  - path: 'releases/*.zip'
-  - path: 'releases/Output/*.exe'
+#  - path: 'releases/*.zip'
+  - path: 'C:\projects\valgreekvat\build\qafmgr\*.exe'
 
 on_finish:
 #   - ps: $blockRdp = $false; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
