@@ -4,7 +4,7 @@ image:
 stack: python 3
 
 environment:
-    PY_DIR: C:\Python37
+    PY_DIR: C:\Python37-x64
     
 platform:
   - x64
