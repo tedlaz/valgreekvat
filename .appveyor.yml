@@ -21,7 +21,6 @@ install:
   - cmd: pip freeze 
 
 build_script:
-  - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
   - cmd: pyinstaller.exe -w qafmgr.py
   - cmd: python makensis.py > install.nsi
   - cmd: makensis.exe install.nsi
