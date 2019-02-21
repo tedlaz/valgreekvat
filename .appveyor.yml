@@ -27,6 +27,7 @@ build_script:
     
 artifacts:
   - path: '*.exe'
+  - name: myartifact
   
 deploy:
   description: 'This is a test description'
@@ -34,7 +35,7 @@ deploy:
   auth_token:
     secure: bt06FOuVpHyB8zXIF1jQvTOPU1/7YGe+57IJvn/xn/YTdZxwYCNvYpF3IWQqTptv
 
-  artifact: '*.exe'
+  artifact: myartifact
   draft: false
   prerelease: false
   on:
