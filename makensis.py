@@ -84,13 +84,13 @@ def getfiles(root_dir, exe, product_name, product_version, publisher, web, readm
 
     
 if __name__ == "__main__":
-    MAIN_FILE = "qminoracc"
+    MAIN_FILE = "qafmgr"
     CURPATH = os.path.dirname(os.path.realpath(__file__))
     ROOT = '%s\\dist\\%s' % (CURPATH, MAIN_FILE)
-    README = "C:\\Users\\IEUser\\prj\pyted\\readme.txt"
+    README = "%s\\requirements.txt" % CURPATH
     EXE = "%s.exe" % MAIN_FILE
-    PRODUCT = "minoracc"
-    VERSION = "1.1"
+    PRODUCT = "qafmgr"
+    VERSION = "1.2"
     PUBLISHER = "Ted Lazaros 2019"
     WEBSITE = "http://greeklinks.000webhostapp.com"
     print(getfiles(ROOT, EXE, PRODUCT, VERSION, PUBLISHER, WEBSITE, README))
