@@ -34,7 +34,7 @@ deploy:
   auth_token:
     secure: bt06FOuVpHyB8zXIF1jQvTOPU1/7YGe+57IJvn/xn/YTdZxwYCNvYpF3IWQqTptv
 
-  artifact: setupqafmgr.exe
+  artifact: '*.exe'
   draft: false
   prerelease: false
   on:
