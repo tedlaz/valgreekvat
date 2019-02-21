@@ -27,7 +27,7 @@ build_script:
     
 artifacts:
   - path: '*.exe'
-  - name: myartifact
+    name: myartifact
   
 deploy:
   description: 'This is a test description'
