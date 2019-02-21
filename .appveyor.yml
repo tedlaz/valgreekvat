@@ -23,8 +23,9 @@ install:
 
 build_script:
   - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
-  - cmd: makensis.exe
   - cmd: pyinstaller.exe -w qafmgr.py
+  - cmd: python makensis.py > install.nsi
+  - cmd: makensis.exe install.nsi
     
 artifacts:
   - path: '*.exe'
