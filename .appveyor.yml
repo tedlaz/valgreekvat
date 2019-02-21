@@ -23,10 +23,11 @@ install:
 
 build_script:
   - cmd: set PYTHONPATH=C:\projects\;%PYTHONPATH%
-  - cmd: pyinstaller.exe -F -w qafmgr.py
+  - cmd: makensis.exe
+  - cmd: pyinstaller.exe -w qafmgr.py
     
 artifacts:
-  - path: 'dist/*.exe'
+  - path: '*.exe'
   
 deploy:
   description: 'This is a test description'
