@@ -32,14 +32,14 @@ def getfiles(root_dir, exe, product_name, product_version, publisher, web, licen
     instal = 'Section "MainSection" SEC01\n  SetOverwrite try\n'
     delete = 'Section Uninstall\n  Delete "$INSTDIR\\uninst.exe"\n'
     directories = []
-    for dirname, subdirlist, filelist in os.walk(root_dir):
-        directories.append(dirname.replace(ROOT, '$INSTDIR'))
+    for dirname, _, filelist in os.walk(root_dir):
+        directories.append(dirname.replace(root_dir, '$INSTDIR'))
         if len(filelist) > 0:
-            instal += '  SetOutPath "%s"\n' % dirname.replace(ROOT, '$INSTDIR')
+            instal += '  SetOutPath "%s"\n' % dirname.replace(root_dir, '$INSTDIR')
             for fname in filelist:
                 fullpath = os.path.join(dirname, fname)
                 instal += '  File "%s"\n' % fullpath
-                delete += '  Delete "%s"\n' % fullpath.replace(ROOT, '$INSTDIR')
+                delete += '  Delete "%s"\n' % fullpath.replace(root_dir, '$INSTDIR')
     instal += '  CreateDirectory "$SMPROGRAMS\\%s"\n' % product_name
     instal += '  CreateShortCut "$SMPROGRAMS\\%s\%s.lnk" "$INSTDIR\\%s"\n' % (product_name, product_name, exe)
     instal += '  CreateShortCut "$DESKTOP\%s.lnk" "$INSTDIR\%s"\n' % (product_name, exe)
@@ -82,16 +82,26 @@ def getfiles(root_dir, exe, product_name, product_version, publisher, web, licen
     mid += 'FunctionEnd\n'    
     return '\n\n'.join([top, instal, mid, delete])
 
-    
-if __name__ == "__main__":
-    MAIN_FILE = "qafmgr"
+
+def create_nsis(filename, productname, version, publisher, website):
+    MAIN_FILE = filename
+    PRODUCT = productname
+    VERSION = version
+    PUBLISHER = publisher
+    WEBSITE = website
     CURPATH = os.path.dirname(os.path.realpath(__file__))
     ROOT = '%s\\dist\\%s' % (CURPATH, MAIN_FILE)
     LICENSE = "%s\\LICENSE" % CURPATH
     EXE = "%s.exe" % MAIN_FILE
+    INSTALLER = "%s.Installer.exe" % PRODUCT
+    return getfiles(ROOT, EXE, PRODUCT, VERSION, PUBLISHER,
+                    WEBSITE, LICENSE, INSTALLER)
+
+
+if __name__ == "__main__":
+    MAIN_FILE = "qafmgr"
     PRODUCT = "qafmgr"
     VERSION = "1.2"
     PUBLISHER = "Ted Lazaros 2019"
     WEBSITE = "http://greeklinks.000webhostapp.com"
-    INSTALLER = "%s.Installer.exe" % PRODUCT
-    print(getfiles(ROOT, EXE, PRODUCT, VERSION, PUBLISHER, WEBSITE, LICENSE, INSTALLER))
+    print(create_nsis(MAIN_FILE, PRODUCT, VERSION, PUBLISHER, WEBSITE))

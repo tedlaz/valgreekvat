@@ -10,7 +10,7 @@ from afmgr import isvat, vatol, get_vat
 class Vat_form(Qw.QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle(u'Έλεγχος Ελληνικού Α.Φ.Μ.')
+        self.setWindowTitle(u'Έλεγχος Ελληνικού ΑΦΜ')
         mainLayout = Qw.QVBoxLayout(self)
         glay = Qw.QGridLayout()
         gla2 = Qw.QGridLayout()
