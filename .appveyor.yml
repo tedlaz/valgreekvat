@@ -37,9 +37,9 @@ artifacts:
     name: myartifact
   
 deploy:
-  tag: $(GitVersion_MajorMinorPatch)
-  release: v$(GitVersion_MajorMinorPatch)
-  description: v$(GitVersion_MajorMinorPatch)
+  tag: $(appveyor_build_version)
+  release: v$(appveyor_build_version)
+  description: v$(appveyor_build_version)
   provider: GitHub
   auth_token:
     secure: bt06FOuVpHyB8zXIF1jQvTOPU1/7YGe+57IJvn/xn/YTdZxwYCNvYpF3IWQqTptv
