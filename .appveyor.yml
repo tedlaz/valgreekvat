@@ -13,7 +13,7 @@ branches:
   only:
     - master
 
-skip_non_tags: true
+#skip_non_tags: true
 
 install:
   - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
@@ -42,4 +42,4 @@ deploy:
   prerelease: false
   on:
     branch: master                 # release from master branch only
-    APPVEYOR_REPO_TAG: true        # deploy on tag push only
+#    APPVEYOR_REPO_TAG: true        # deploy on tag push only
