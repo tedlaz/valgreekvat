@@ -13,7 +13,7 @@ branches:
   only:
     - master
 
-#skip_non_tags: true
+skip_tags: true
 
 install:
   - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
