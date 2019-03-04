@@ -37,9 +37,9 @@ artifacts:
     name: myartifact
   
 deploy:
-  tag: $(GIT_VERSION)
-  release: v$(GIT_VERSION)
-  description: v$(GIT_VERSION)
+  tag: $(GitVersion_MajorMinorPatch)
+  release: v$(GitVersion_MajorMinorPatch)
+  description: v$(GitVersion_MajorMinorPatch)
   provider: GitHub
   auth_token:
     secure: bt06FOuVpHyB8zXIF1jQvTOPU1/7YGe+57IJvn/xn/YTdZxwYCNvYpF3IWQqTptv
