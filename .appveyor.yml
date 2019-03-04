@@ -30,7 +30,9 @@ artifacts:
     name: myartifact
   
 deploy:
-  description: 'This is a test description'
+  tag: $(GIT_VERSION)
+  release: v$(GIT_VERSION)
+  description: v$(GIT_VERSION)
   provider: GitHub
   auth_token:
     secure: bt06FOuVpHyB8zXIF1jQvTOPU1/7YGe+57IJvn/xn/YTdZxwYCNvYpF3IWQqTptv
@@ -40,4 +42,4 @@ deploy:
   prerelease: false
   on:
     branch: master                 # release from master branch only
-#    APPVEYOR_REPO_TAG: true        # deploy on tag push only
+    APPVEYOR_REPO_TAG: true        # deploy on tag push only
