@@ -1,4 +1,4 @@
 PyQt5==5.11.3
 PyQt5-sip==4.19.13
 suds-jurko==0.6
-PyInstaller==5.13
+PyInstaller
